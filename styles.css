@@ -7,13 +7,13 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FF99DC 0%, #826DEE 55%, #EB4213 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    color: #333;
+    color: #4a3d57;
 }
 
 /* ===== CONTENEDOR PRINCIPAL ===== */
@@ -25,13 +25,14 @@ body {
 
 /* ===== TARJETA DE PERFIL ===== */
 .profile-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: linear-gradient(180deg, rgba(255, 245, 252, 0.96) 0%, rgba(255, 255, 255, 0.92) 100%);
     backdrop-filter: blur(10px);
     border-radius: 24px;
     padding: 32px;
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.1),
-        0 8px 16px rgba(0, 0, 0, 0.1);
+        0 20px 40px rgba(130, 109, 238, 0.20),
+        0 8px 16px rgba(235, 66, 19, 0.10);
+    border: 2px solid rgba(255, 153, 220, 0.45);
     margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -39,8 +40,8 @@ body {
 .profile-card:hover {
     transform: translateY(-5px);
     box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.15),
-        0 12px 24px rgba(0, 0, 0, 0.12);
+        0 24px 48px rgba(130, 109, 238, 0.28),
+        0 12px 22px rgba(235, 66, 19, 0.14);
 }
 
 /* ===== SECCIÓN DE INFORMACIÓN PERSONAL ===== */
@@ -59,20 +60,21 @@ body {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border: 4px solid #D8F382;
+    box-shadow: 0 10px 20px rgba(130, 109, 238, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-image:hover {
     transform: scale(1.05);
+    box-shadow: 0 14px 24px rgba(235, 66, 19, 0.18);
 }
 
 /* INFORMACIÓN PERSONAL - MODIFICAR ESTILOS AQUÍ SI NECESITAS */
 .profile-name {
     font-size: 28px;
     font-weight: 700;
-    color: #1976d2;
+    color: #EB4213;
     margin-bottom: 8px;
     letter-spacing: -0.5px;
 }
@@ -80,7 +82,7 @@ body {
 .profile-lastname {
     font-size: 24px;
     font-weight: 500;
-    color: #424242;
+    color: #826DEE;
     margin-bottom: 16px;
 }
 
@@ -92,7 +94,7 @@ body {
 
 .profile-details p {
     font-size: 16px;
-    color: #666;
+    color: #6b5a78;
     font-weight: 400;
 }
 
@@ -103,15 +105,15 @@ body {
     gap: 12px;
     font-size: 20px;
     font-weight: 600;
-    color: #1976d2;
+    color: #EB4213;
     margin-bottom: 20px;
     padding-bottom: 8px;
-    border-bottom: 2px solid #e3f2fd;
+    border-bottom: 2px solid #FF99DC;
 }
 
 .section-title .material-icons {
     font-size: 24px;
-    color: #1976d2;
+    color: #826DEE;
 }
 
 /* ===== SECCIÓN DE HABILIDADES ===== */
@@ -127,24 +129,25 @@ body {
 }
 
 .skill-item {
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    background: linear-gradient(135deg, #FFD0EC 0%, #FF99DC 100%);
     padding: 16px;
     border-radius: 12px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid #e3f2fd;
+    border: 1px solid rgba(235, 66, 19, 0.18);
+    box-shadow: 0 6px 12px rgba(255, 153, 220, 0.18);
 }
 
 .skill-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(25, 118, 210, 0.2);
-    background: linear-gradient(135deg, #bbdefb 0%, #90caf9 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 18px rgba(130, 109, 238, 0.22);
+    background: linear-gradient(135deg, #D8F382 0%, #FF99DC 100%);
 }
 
 .skill-name {
     font-size: 16px;
-    font-weight: 500;
-    color: #1976d2;
+    font-weight: 600;
+    color: #826DEE;
 }
 
 /* ===== SECCIONES DE FAVORITOS ===== */
@@ -160,25 +163,28 @@ body {
 }
 
 .favorite-item {
-    background: #f5f5f5;
+    background: #fff7fc;
     padding: 12px 16px;
     border-radius: 8px;
     font-size: 16px;
-    color: #424242;
+    color: #5e4f6b;
     font-weight: 400;
     transition: all 0.3s ease;
-    border-left: 4px solid #1976d2;
+    border-left: 4px solid #EB4213;
+    border: 1px solid rgba(255, 153, 220, 0.22);
 }
 
 .favorite-item:hover {
-    background: #e3f2fd;
+    background: #D8F382;
+    color: #5a438f;
     transform: translateX(4px);
+    box-shadow: 0 8px 16px rgba(216, 243, 130, 0.28);
 }
 
 /* ===== FOOTER ===== */
 .footer {
     text-align: center;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 245, 252, 0.92);
     font-size: 14px;
     font-weight: 300;
 }
@@ -195,6 +201,27 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ===== ESTILO OPCIONAL PARA BOTONES SI DESPUÉS AGREGÁS ALGUNO ===== */
+button,
+.btn {
+    background: linear-gradient(135deg, #EB4213 0%, #FF99DC 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(235, 66, 19, 0.18);
+}
+
+button:hover,
+.btn:hover {
+    background: linear-gradient(135deg, #826DEE 0%, #EB4213 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(130, 109, 238, 0.22);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -298,28 +325,53 @@ body {
 /* ===== ESTILOS PARA MODO OSCURO (OPCIONAL) ===== */
 @media (prefers-color-scheme: dark) {
     .profile-card {
-        background: rgba(30, 30, 30, 0.95);
+        background: rgba(56, 42, 78, 0.94);
         color: #fff;
+        border: 1px solid rgba(255, 153, 220, 0.35);
     }
     
     .profile-name {
-        color: #64b5f6;
+        color: #FF99DC;
     }
     
     .profile-lastname {
-        color: #e0e0e0;
+        color: #D8F382;
     }
     
     .profile-details p {
-        color: #b0b0b0;
+        color: #f3dff0;
+    }
+
+    .section-title {
+        color: #FF99DC;
+        border-bottom: 2px solid rgba(216, 243, 130, 0.45);
+    }
+
+    .section-title .material-icons {
+        color: #D8F382;
+    }
+    
+    .skill-item {
+        background: linear-gradient(135deg, rgba(255, 153, 220, 0.18) 0%, rgba(130, 109, 238, 0.32) 100%);
+        border: 1px solid rgba(255, 153, 220, 0.25);
+    }
+
+    .skill-item:hover {
+        background: linear-gradient(135deg, rgba(216, 243, 130, 0.28) 0%, rgba(255, 153, 220, 0.24) 100%);
+    }
+
+    .skill-name {
+        color: #ffffff;
     }
     
     .favorite-item {
-        background: #424242;
-        color: #e0e0e0;
+        background: rgba(255, 255, 255, 0.06);
+        color: #f5edf7;
+        border-left: 4px solid #EB4213;
     }
     
     .favorite-item:hover {
-        background: #616161;
+        background: rgba(216, 243, 130, 0.18);
+        color: #ffffff;
     }
-} 
+}
