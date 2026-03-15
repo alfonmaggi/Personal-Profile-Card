@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background: linear-gradient(135deg, #FF99DC 0%, #826DEE 55%, #EB4213 100%);
     min-height: 100vh;
     display: flex;
@@ -50,9 +50,11 @@ body {
     margin-bottom: 32px;
 }
 
-/* FOTO DE PERFIL - MODIFICAR ESTILOS AQUÍ SI NECESITAS */
+/* ===== FOTO DE PERFIL Y EMOJIS ===== */
 .profile-image-container {
     margin-bottom: 24px;
+    position: relative;
+    display: inline-block;
 }
 
 .profile-image {
@@ -63,6 +65,8 @@ body {
     border: 4px solid #D8F382;
     box-shadow: 0 10px 20px rgba(130, 109, 238, 0.18);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .profile-image:hover {
@@ -70,16 +74,69 @@ body {
     box-shadow: 0 14px 24px rgba(235, 66, 19, 0.18);
 }
 
-/* INFORMACIÓN PERSONAL - MODIFICAR ESTILOS AQUÍ SI NECESITAS */
+/* ===== EMOJIS HOVER ===== */
+.emoji-burst {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.e1  { top: -70px;  left:   0px; }
+.e2  { top: -55px;  left:  55px; }
+.e3  { top:   0px;  left:  75px; }
+.e4  { top:  55px;  left:  55px; }
+.e5  { top:  75px;  left:   0px; }
+.e6  { top:  55px;  left: -55px; }
+.e7  { top:   0px;  left: -75px; }
+.e8  { top: -55px;  left: -55px; }
+.e9  { top: -80px;  left:  28px; }
+.e10 { top:  28px;  left:  80px; }
+.e11 { top:  80px;  left: -28px; }
+.e12 { top: -28px;  left: -80px; }
+
+.profile-image-container:hover .emoji {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.profile-image-container:hover .e1  { transition-delay: 0.00s; }
+.profile-image-container:hover .e2  { transition-delay: 0.04s; }
+.profile-image-container:hover .e3  { transition-delay: 0.08s; }
+.profile-image-container:hover .e4  { transition-delay: 0.12s; }
+.profile-image-container:hover .e5  { transition-delay: 0.16s; }
+.profile-image-container:hover .e6  { transition-delay: 0.20s; }
+.profile-image-container:hover .e7  { transition-delay: 0.24s; }
+.profile-image-container:hover .e8  { transition-delay: 0.28s; }
+.profile-image-container:hover .e9  { transition-delay: 0.32s; }
+.profile-image-container:hover .e10 { transition-delay: 0.36s; }
+.profile-image-container:hover .e11 { transition-delay: 0.40s; }
+.profile-image-container:hover .e12 { transition-delay: 0.44s; }
+
+/* ===== INFORMACIÓN PERSONAL ===== */
 .profile-name {
-    font-size: 28px;
-    font-weight: 700;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 48px;
+    font-weight: 400;
     color: #EB4213;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    letter-spacing: 0px;
 }
 
 .profile-lastname {
+    font-family: 'Funnel Sans', sans-serif;
     font-size: 24px;
     font-weight: 500;
     color: #826DEE;
@@ -93,6 +150,7 @@ body {
 }
 
 .profile-details p {
+    font-family: 'Raleway', sans-serif;
     font-size: 16px;
     color: #6b5a78;
     font-weight: 400;
@@ -100,6 +158,7 @@ body {
 
 /* ===== SECCIONES GENERALES ===== */
 .section-title {
+    font-family: 'Raleway', sans-serif;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -121,7 +180,6 @@ body {
     margin-bottom: 32px;
 }
 
-/* HABILIDADES - MODIFICAR ESTILOS AQUÍ SI NECESITAS */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -145,6 +203,7 @@ body {
 }
 
 .skill-name {
+    font-family: 'Raleway', sans-serif;
     font-size: 16px;
     font-weight: 600;
     color: #826DEE;
@@ -155,7 +214,6 @@ body {
     margin-bottom: 32px;
 }
 
-/* PELÍCULAS Y DISCOS FAVORITOS - MODIFICAR ESTILOS AQUÍ SI NECESITAS */
 .favorites-list {
     display: flex;
     flex-direction: column;
@@ -166,11 +224,11 @@ body {
     background: #fff7fc;
     padding: 12px 16px;
     border-radius: 8px;
+    font-family: 'Raleway', sans-serif;
     font-size: 16px;
     color: #5e4f6b;
     font-weight: 400;
     transition: all 0.3s ease;
-    border-left: 4px solid #EB4213;
     border: 1px solid rgba(255, 153, 220, 0.22);
 }
 
@@ -181,10 +239,66 @@ body {
     box-shadow: 0 8px 16px rgba(216, 243, 130, 0.28);
 }
 
+/* ===== ITEMS CON LINKS (PELÍCULAS Y DISCOS) ===== */
+.favorite-item--link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.favorite-item--link:hover {
+    background: #D8F382;
+    color: #5a438f;
+    transform: translateX(4px);
+    box-shadow: 0 8px 16px rgba(216, 243, 130, 0.28);
+}
+
+/* ===== ICONOS DE PLATAFORMAS (PELÍCULAS) ===== */
+.platform-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.platform-icon--max {
+    color: #0025BE;
+}
+
+.platform-icon--prime {
+    color: #00A8E1;
+}
+
+.favorite-item--link:hover .platform-icon {
+    transform: scale(1.2);
+}
+
+/* ===== ICONO DE SPOTIFY (DISCOS) ===== */
+.spotify-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #1DB954;
+    transition: transform 0.3s ease;
+}
+
+.favorite-item--link:hover .spotify-icon {
+    transform: scale(1.2);
+}
+
+.favorite-item--link:hover .spotify-icon ~ * {
+    color: #5a438f;
+}
+
 /* ===== FOOTER ===== */
 .footer {
     text-align: center;
     color: rgba(255, 245, 252, 0.92);
+    font-family: 'Raleway', sans-serif;
     font-size: 14px;
     font-weight: 300;
 }
@@ -203,9 +317,10 @@ body {
     }
 }
 
-/* ===== ESTILO OPCIONAL PARA BOTONES SI DESPUÉS AGREGÁS ALGUNO ===== */
+/* ===== ESTILO PARA BOTONES ===== */
 button,
 .btn {
+    font-family: 'Raleway', sans-serif;
     background: linear-gradient(135deg, #EB4213 0%, #FF99DC 100%);
     color: #ffffff;
     border: none;
@@ -225,7 +340,6 @@ button:hover,
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-/* Para tablets */
 @media (max-width: 768px) {
     .profile-card {
         padding: 24px;
@@ -233,7 +347,7 @@ button:hover,
     }
     
     .profile-name {
-        font-size: 24px;
+        font-size: 40px;
     }
     
     .profile-lastname {
@@ -250,7 +364,6 @@ button:hover,
     }
 }
 
-/* Para móviles */
 @media (max-width: 480px) {
     body {
         padding: 10px;
@@ -267,7 +380,7 @@ button:hover,
     }
     
     .profile-name {
-        font-size: 22px;
+        font-size: 36px;
     }
     
     .profile-lastname {
@@ -293,7 +406,6 @@ button:hover,
     }
 }
 
-/* Para pantallas muy pequeñas */
 @media (max-width: 320px) {
     .profile-card {
         padding: 16px;
@@ -305,7 +417,7 @@ button:hover,
     }
     
     .profile-name {
-        font-size: 20px;
+        font-size: 32px;
     }
     
     .profile-lastname {
@@ -313,7 +425,7 @@ button:hover,
     }
 }
 
-/* ===== MEJORAS DE ACCESIBILIDAD ===== */
+/* ===== ACCESIBILIDAD ===== */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -322,7 +434,7 @@ button:hover,
     }
 }
 
-/* ===== ESTILOS PARA MODO OSCURO (OPCIONAL) ===== */
+/* ===== MODO OSCURO ===== */
 @media (prefers-color-scheme: dark) {
     .profile-card {
         background: rgba(56, 42, 78, 0.94);
@@ -373,5 +485,22 @@ button:hover,
     .favorite-item:hover {
         background: rgba(216, 243, 130, 0.18);
         color: #ffffff;
+    }
+
+    .favorite-item--link {
+        color: #f5edf7;
+    }
+
+    .favorite-item--link:hover {
+        background: rgba(216, 243, 130, 0.18);
+        color: #ffffff;
+    }
+
+    .platform-icon--max {
+        color: #6B8CFF;
+    }
+
+    .platform-icon--prime {
+        color: #4DC8F5;
     }
 }
